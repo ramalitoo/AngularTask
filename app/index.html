@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Test</title>
+  <script data-require="angular.js@1.4.x" src="https://code.angularjs.org/1.4.3/angular.js" data-semver="1.4.3"></script>
+  <script src="main.js"></script>
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" type='text/css' rel="stylesheet">
+  
+  <style>
+      td {
+  border: 1px solid black;
+  text-align: left;
+  padding: 8px;
+}
+label {
+    margin:5px
+}
+  </style>
+</head>
+
+<body ng-controller="MainCtrl">
+  <div>
+    <div style="margin:20px">
+      <form role="form" ng-submit="addRow()">
+          <label>Name </label><input type="text"  name="name" ng-model="selectedStudents.name" />
+          <label>Surname </label><input type="text" name="surname" ng-model="selectedStudents.surname" />
+          <input type="button" value="Add"  ng-click="addRow()"  />
+        
+      </form>
+    </div>
+      <table style="margin-left: 20px">
+          <tr >
+              <td ><b>Name</b></td>
+              <td ><b>Surname</b></td>
+          </tr>
+          <tr ng-repeat="student in students">
+            <td>{{student.name}}</td>
+            <td>{{student.surname}}</td>
+          </tr>
+      </table>
+  </div>
+</body>
+
+</html>
